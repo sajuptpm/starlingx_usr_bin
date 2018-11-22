@@ -252,7 +252,8 @@ sub print_memory {
    close(FILE);
 
    # Process all entries of per-Node MEMINFO
-   for ($n=0; $n < $::num_nodes; $n++) {
+   #for ($n=0; $n < $::num_nodes; $n++) {
+   for ($n=0; $n < 1; $n++) {
       $file = sprintf('/sys/devices/system/node/node%d/meminfo', $n);
       open(FILE, $file) || die "Cannot open file: $file ($!)";
       while($_ = <FILE>) {
